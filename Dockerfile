@@ -21,7 +21,7 @@ FROM base as build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev
 
-RUN apk add --no-cache \
+RUN apk-get --no-cache \
     build-base \
     libyaml-dev \
 
