@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_17_012102) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_17_124031) do
+  create_table "lectures", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.integer "overall"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tweets", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false

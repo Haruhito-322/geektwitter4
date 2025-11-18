@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'lectures/index'
+  get 'lectures/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,6 +13,11 @@ Rails.application.routes.draw do
   get 'hello/link' => 'hello#link'
   
   resources :tweets
+
+  root 'lectures#index'
+  get 'lectures/index'  => 'lectures#index'
+  get 'lectures/new'  => 'lectures#new'
+  post 'lectures/new'  => 'lectures#create'
 
   # Defines the root path route ("/")
   # root "posts#index"
