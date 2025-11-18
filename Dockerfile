@@ -21,9 +21,7 @@ FROM base as build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev
 
-RUN apt-get --no-cache \
-    build-base \
-    libyaml-dev \
+RUN apt-get update && apt-get install -y build-essential libyaml-dev
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
